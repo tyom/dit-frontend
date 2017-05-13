@@ -6,6 +6,22 @@
     <main>
       <example>
         <h2 slot="title">
+          Buttons
+        </h2>
+        <form-group>
+          <dit-button :disabled="buttonsDisabled" variant="primary">Primary</dit-button>
+          <dit-button :disabled="buttonsDisabled">Standard</dit-button>
+          <dit-button :disabled="buttonsDisabled" variant="warning">Warning</dit-button>
+        </form-group>
+        <p>
+          <dit-button @click.native="handleDisabledButtons" size="small">
+            {{nextButtonStatus}} buttons
+          </dit-button>
+        </p>
+      </example>
+
+      <example>
+        <h2 slot="title">
           Inline <code>form-group</code>
         </h2>
         <form-group label="Search site" inline>
@@ -36,9 +52,22 @@
       ...FormElements,
       Example
     },
+    data() {
+      return {
+        buttonsDisabled: false
+      }
+    },
+    computed: {
+      nextButtonStatus() {
+        return this.buttonsDisabled ? 'Enable' : 'Disable'
+      }
+    },
     methods: {
       handleClick() {
         console.log('handle click')
+      },
+      handleDisabledButtons() {
+        this.buttonsDisabled = !this.buttonsDisabled
       }
     }
   }
