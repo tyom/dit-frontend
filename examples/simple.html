@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="../dist/components.build.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+    #app {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <img src="../dist/crest.svg" alt="" width="200">
+      <p>
+        <dit-button @click.native="handleButtonPress">{{buttonText}}</dit-button>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        buttonText: 'Press the button',
+      },
+      components: DITComponents,
+      methods: {
+        handleButtonPress: function () {
+          this.buttonText = this.buttonText.split('').reverse().join('')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

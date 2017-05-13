@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'dit-button'
+    name: 'dit-button',
   }
 </script>
 
