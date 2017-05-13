@@ -4,37 +4,42 @@
       <img src="./assets/crest.svg" width="150">
     </header>
     <main>
-      <form>
-        <h2>Inline <code>form-group</code></h2>
+      <example>
+        <h2 slot="title">
+          Inline <code>form-group</code>
+        </h2>
         <form-group label="Search site" inline>
           <dit-input type="text"/>
           <dit-button @click.native="handleClick">Find</dit-button>
         </form-group>
+      </example>
 
-        <h2><code>form-group</code> with <code>dit-select</code></h2>
+      <example>
+        <h2 slot="title">
+          <code>form-group</code> with <code>dit-select</code>
+        </h2>
         <form-group label="Select box">
           <dit-select :options="[{value: 1, label: 'Option #1'}]" initialSelection="1"></dit-select>
         </form-group>
-      </form>
+      </example>
     </main>
   </div>
 </template>
 
 <script>
-  import FormElements from './components'
+  import { FormElements } from './components'
+  import { Example } from './components/docs'
 
   export default {
     name: 'app',
     components: {
-      ...FormElements
+      ...FormElements,
+      Example
     },
     methods: {
       handleClick() {
         console.log('handle click')
       }
-    },
-    created() {
-
     }
   }
 </script>
@@ -55,6 +60,7 @@
 
   main {
     padding: $container-padding;
+    max-width: 960px;
   }
 
   form {
