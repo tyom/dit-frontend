@@ -1,0 +1,36 @@
+const path = require('path')
+const webpack = require('webpack')
+
+module.exports = {
+  entry: './src.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'build.js',
+    publicPath: 'dist',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+      }
+    ]
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  },
+  devServer: {
+    historyApiFallback: true,
+  },
+  devtool: '#eval-source-map'
+}
