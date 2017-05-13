@@ -9,14 +9,6 @@
   </section>
 </template>
 
-<script>
-  export default {
-    created() {
-      console.log(this.$slots)
-    }
-  }
-</script>
-
 <style lang="scss">
   .dit-example {
     border: 1px solid #ccc;
@@ -28,7 +20,20 @@
   }
 
   .dit-example__header {
-    padding: 20px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::after {
+      content: "Example";
+      font-weight: 500;
+      color: #aaa;
+      display: block;
+      font-size: 1.1em;
+      letter-spacing: .01em;
+      text-transform: uppercase;
+    }
 
     h2 {
       margin: 0;

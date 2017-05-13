@@ -36,11 +36,13 @@
   .form-group--inline {
     .form-control {
       display: inline-block;
-      width: auto;
     }
 
     .form-label {
-      margin-right: 10px;
+      @media(min-width: 40em) {
+        margin-right: 10px;
+        margin-bottom: 0;
+      }
     }
   }
 
