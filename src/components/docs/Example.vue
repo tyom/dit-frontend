@@ -20,10 +20,17 @@
   }
 
   .dit-example__header {
-    padding: 15px 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    code {
+      background: rgba(#fff, .7);
+      padding: 1px 5px;
+      color: #555;
+      border-radius: 3px;
+    }
 
     &::after {
       content: "Example";

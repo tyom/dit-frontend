@@ -1,6 +1,7 @@
 <template>
   <div :class="groupClassName">
     <label class="form-label" :for="groupId" v-if="label">{{label}}</label>
+    <p class="form-hint" v-if="hint">{{hint}}</p>
     <slot></slot>
   </div>
 </template>
@@ -12,7 +13,9 @@
     name: 'form-group',
     props: {
       label: String,
-      inline: Boolean
+      hint: String,
+      inline: Boolean,
+      hasError: Boolean
     },
     computed: {
       groupId() {
@@ -21,7 +24,8 @@
       groupClassName() {
         return {
           'form-group': true,
-          'form-group--inline': this.inline
+          'form-group--inline': this.inline,
+          'has-error': this.hasError
         }
       }
     }
@@ -38,18 +42,37 @@
       display: inline-block;
     }
 
-    .form-label {
-      @media(min-width: 40em) {
+    @media(min-width: 40em) {
+      .form-label {
         margin-right: 10px;
         margin-bottom: 0;
+      }
+
+      .form-hint {
+        margin-top: 5px;
       }
     }
   }
 
   .form-label {
     margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1.2em;
     display: inline-block;
     font-weight: 600;
+  }
+
+  .form-hint {
+    color: #6f777b;
+    margin: -5px 0 10px;
+  }
+
+  .form-group.has-error {
+    .form-label {
+      color: #b10e1e;
+    }
+
+    .form-control {
+      border-color: #b10e1e;
+    }
   }
 </style>

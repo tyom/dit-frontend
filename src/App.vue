@@ -24,9 +24,13 @@
         <h2 slot="title">
           Inline <code>form-group</code>
         </h2>
-        <form-group label="Search site" inline>
+        <form-group label="Find user" inline>
           <dit-input type="text"/>
-          <dit-button @click.native="handleClick">Find</dit-button>
+          <dit-button @click.native="handleClick">Search</dit-button>
+        </form-group>
+        <form-group label="Amount" inline hint="In GBP">
+          <dit-input type="number"/>
+          <dit-button @click.native="handleClick">Convert</dit-button>
         </form-group>
       </example>
 
@@ -35,6 +39,9 @@
           <code>form-group</code> with <code>dit-select</code>
         </h2>
         <form-group label="Select box">
+          <dit-select :options="[{value: 1, label: 'Option #1'}]" initialSelection="1"></dit-select>
+        </form-group>
+        <form-group label="Select box" hasError hint="Some helpful text">
           <dit-select :options="[{value: 1, label: 'Option #1'}]" initialSelection="1"></dit-select>
         </form-group>
       </example>
