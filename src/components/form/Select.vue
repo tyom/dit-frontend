@@ -1,5 +1,5 @@
 <template>
-  <select class="dit-select" v-model="initialSelection">
+  <select class="dit-select form-control" v-model="initialSelection" :id="$parent.groupId">
     <slot></slot>
     <option v-if="options.length" :value="option.value" v-for="option in options">{{option.label}}</option>
   </select>
@@ -11,7 +11,9 @@
     props: {
       options: {
         type: Array,
-        default: []
+        default() {
+          return []
+        }
       },
       initialSelection: {
         type: String,
@@ -27,7 +29,6 @@
     border: 2px solid;
     color: inherit;
     font-size: 1em;
-    height: 2.2em;
-    width: 100%;
+    height: 2.4em;
   }
 </style>

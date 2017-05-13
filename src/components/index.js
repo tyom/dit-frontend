@@ -1,7 +1,7 @@
-import DitButton from './Button.vue'
-import DitSelect from './Select.vue'
+import FormElements from './form'
 
-export {
-  DitButton,
-  DitSelect
+import './_generic.scss'
+
+export default {
+  ...FormElements
 }
