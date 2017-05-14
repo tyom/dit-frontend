@@ -2,7 +2,7 @@
   <div :class="groupClassName">
     <template v-if="variant === 'checkbox'">
       <slot></slot>
-      <group-label v-if="label">{{label}}</group-label>
+      <group-label v-if="label" :optional="optional">{{label}}</group-label>
     </template>
     <template v-else-if="variant === 'radio'">
       <fieldset>
@@ -12,7 +12,7 @@
       </fieldset>
     </template>
     <template v-else>
-      <group-label v-if="label">{{label}}</group-label>
+      <group-label v-if="label" :optional="optional">{{label}}</group-label>
       <p class="form-hint" v-if="hint">{{hint}}</p>
       <slot></slot>
     </template>
@@ -29,7 +29,8 @@
       hint: String,
       inline: Boolean,
       hasError: Boolean,
-      variant: String
+      variant: String,
+      optional: Boolean
     },
     computed: {
       groupId() {
@@ -45,9 +46,11 @@
     },
     components: {
       GroupLabel: {
+        props: ['optional'],
         template: `
           <label class="form-label" :for="$parent.groupId">
             <slot></slot>
+            <template v-if="optional">(optional)</template>
           </label>
         `
       }

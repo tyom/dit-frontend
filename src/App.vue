@@ -43,7 +43,7 @@
         <h2 slot="title">
           <code>form-group</code> with <code>dit-select</code>
         </h2>
-        <form-group label="Select box">
+        <form-group label="Select box" optional>
           <dit-select :options="[{value: 1, label: 'Option #1'}]" initialSelection="1"></dit-select>
         </form-group>
         <form-group label="Select box" hasError hint="Some helpful text">
