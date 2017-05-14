@@ -89,26 +89,30 @@
 
         &::before,
         &::after {
+          content: "";
           box-sizing: border-box;
           position: absolute;
           left: 0;
           top: -4px;
           height: 1.5em;
           width: 1.5em;
-          transition: 200ms box-shadow;
+          transition: 200ms;
         }
 
         &::before {
-          content: "";
           border: 2px solid;
           background-color: #fff;
+        }
+
+        &::after {
+          opacity: 0;
+          transform: scale(0);
         }
       }
 
       &:checked + .form-label::after {
-        content: "✔";
-        text-align: center;
-        line-height: 1.7;
+        opacity: 1;
+        transform: scale(1);
       }
 
       &:focus + .form-label::before {
@@ -117,15 +121,20 @@
     }
   }
 
+  .dit-checkbox {
+    & + .form-label::after {
+      content: "✔";
+      text-align: center;
+      line-height: 1.7;
+    }
+  }
+
   .dit-radio {
-    & + .form-label {
-      &::before {
-        border-radius: 100%;
-      }
+    & + .form-label::before {
+      border-radius: 100%;
     }
 
-    &:checked + .form-label::after {
-      content: "";
+    & + .form-label::after {
       height: 17px;
       width: 17px;
       background: #000;

@@ -115,6 +115,7 @@
   main {
     padding: $container-padding;
     max-width: 960px;
+    background-color: #eee;
   }
 
   form {

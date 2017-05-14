@@ -11,19 +11,14 @@
 
 <style lang="scss">
   .dit-example {
-    border: 1px solid #ccc;
-    background-color: #eee;
-
     & + & {
       margin-top: 30px;
     }
   }
 
   .dit-example__header {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 10px 140px 10px 20px;
+    position: relative;
 
     code {
       background: rgba(#fff, .7);
@@ -34,11 +29,16 @@
 
     &::after {
       content: "Example";
+      position: absolute;
+      background-color: #fff;
+      right: 0;
+      bottom: 0;
       font-weight: 500;
       color: #aaa;
       display: block;
       font-size: 1.1em;
       letter-spacing: .01em;
+      padding: 13px 20px;
       text-transform: uppercase;
     }
 
@@ -49,6 +49,7 @@
 
   .dit-example__preview {
     background-color: #fff;
+    box-shadow: 0 5px 0 -3px #ddd;
     padding: 20px;
   }
 </style>
