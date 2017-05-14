@@ -14,7 +14,7 @@
           <dit-button :disabled="buttonsDisabled">Standard</dit-button>
           <dit-button :disabled="buttonsDisabled" variant="warning">Warning</dit-button>
         </form-group>
-        <form-group label="Disabled" variant="checkbox">
+        <form-group label="Disabled state" variant="checkbox">
           <dit-input type="checkbox" v-model="buttonsDisabled" @checkbox-toggle="buttonsCheckbox"/>
         </form-group>
         <form-group label="Are you sure?" variant="radio" hint="Think carefully.">

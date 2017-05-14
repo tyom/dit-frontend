@@ -85,7 +85,7 @@
         position: relative;
         user-select: none;
         padding-left: 2em;
-        margin-right: 1.6em;
+        margin-right: 1.2em;
 
         &::before,
         &::after {
@@ -93,9 +93,9 @@
           box-sizing: border-box;
           position: absolute;
           left: 0;
-          top: -4px;
-          height: 1.5em;
-          width: 1.5em;
+          top: -3px;
+          height: 30px;
+          width: 30px;
           transition: 200ms;
         }
 
@@ -125,7 +125,8 @@
     & + .form-label::after {
       content: "✔";
       text-align: center;
-      line-height: 1.7;
+      font-size: 24px;
+      line-height: 1.4;
     }
   }
 
@@ -135,11 +136,11 @@
     }
 
     & + .form-label::after {
-      height: 17px;
-      width: 17px;
       background: #000;
       border-radius: 100%;
       margin: 6px;
+      width: 18px;
+      height: 18px;
     }
   }
 </style>
