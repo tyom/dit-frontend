@@ -7,7 +7,13 @@
   "main": "./dist/components.build.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "examples:build": "yarn build && run-p examples:build:*",
+    "examples:build:webpack": "webpack --config examples/webpack/webpack.config.js",
+    "examples:build:components": "webpack --config examples/components/webpack.config.js",
+    "examples:run:simple": "webpack-dev-server --content-base examples/ --open",
+    "examples:run:webpack": "cd examples/webpack && webpack-dev-server --open",
+    "examples:run:components": "cd examples/components && webpack-dev-server --open"
   },
   "dependencies": {
     "babel-preset-stage-2": "^6.24.1",
@@ -22,6 +28,7 @@
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
     "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
     "postcss-cssnext": "^2.10.0",
     "postcss-loader": "^2.0.5",
     "sass-loader": "^6.0.5",

@@ -1,9 +1,9 @@
 const path = require('path')
 
 module.exports = {
-  entry: './entry.js',
+  entry: path.resolve(__dirname, 'entry.js'),
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
@@ -42,5 +42,5 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  devtool: '#eval-source-map'
+  devtool: '#source-map'
 }

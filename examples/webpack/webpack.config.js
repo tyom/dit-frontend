@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './src.js',
+  entry: path.resolve(__dirname, 'src.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'build.js',
@@ -32,5 +32,5 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  devtool: '#eval-source-map'
+  devtool: '#source-map'
 }

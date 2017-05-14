@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import {DitButton} from '../../dist/components.build'
+import {FormElements} from '../../dist/components.build'
 import '../../src/assets/crest.svg'
 
 new Vue({
@@ -8,7 +8,7 @@ new Vue({
     buttonText: 'Press the button',
   },
   components: {
-    DitButton
+    ...FormElements
   },
   methods: {
     handleButtonPress: function () {

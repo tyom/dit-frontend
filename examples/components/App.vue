@@ -2,6 +2,7 @@
   <div id="app">
     <div>
       <img src="../../src/assets/crest.svg" width="200">
+      <h1>Example of using single file Vue components</h1>
       <p>
         <dit-button @click.native="handleClick">Press me</dit-button>
       </p>
@@ -10,12 +11,12 @@
 </template>
 
 <script>
-  import {DitButton} from '../../src/components'
+  import {FormElements} from '../../dist/components.build'
 
   export default {
     name: 'app',
     components: {
-      DitButton
+      ...FormElements
     },
     methods: {
       handleClick() {
