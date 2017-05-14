@@ -1,13 +1,26 @@
 <template>
   <div :class="groupClassName">
-    <label class="form-label" :for="groupId" v-if="label">{{label}}</label>
-    <p class="form-hint" v-if="hint">{{hint}}</p>
-    <slot></slot>
+    <template v-if="variant === 'checkbox'">
+      <slot></slot>
+      <group-label v-if="label">{{label}}</group-label>
+    </template>
+    <template v-else-if="variant === 'radio'">
+      <fieldset>
+        <legend>{{label}}</legend>
+        <p class="form-hint" v-if="hint">{{hint}}</p>
+        <slot></slot>
+      </fieldset>
+    </template>
+    <template v-else>
+      <group-label v-if="label">{{label}}</group-label>
+      <p class="form-hint" v-if="hint">{{hint}}</p>
+      <slot></slot>
+    </template>
   </div>
 </template>
 
 <script>
-  import {kebabCase} from 'lodash'
+  import { kebabCase } from 'lodash'
 
   export default {
     name: 'form-group',
@@ -15,7 +28,8 @@
       label: String,
       hint: String,
       inline: Boolean,
-      hasError: Boolean
+      hasError: Boolean,
+      variant: String
     },
     computed: {
       groupId() {
@@ -28,13 +42,22 @@
           'has-error': this.hasError
         }
       }
+    },
+    components: {
+      GroupLabel: {
+        template: `
+          <label class="form-label" :for="$parent.groupId">
+            <slot></slot>
+          </label>
+        `
+      }
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .form-group {
-    margin: 20px 0;
+    margin: 30px 0;
   }
 
   .form-group--inline {

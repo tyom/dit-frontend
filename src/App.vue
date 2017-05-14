@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <header>
-      <img src="./assets/crest.svg" width="150">
+      <img src="./assets/crest.svg" width="100">
+      <h1>Department for International Trade</h1>
     </header>
     <main>
       <example>
@@ -13,11 +14,15 @@
           <dit-button :disabled="buttonsDisabled">Standard</dit-button>
           <dit-button :disabled="buttonsDisabled" variant="warning">Warning</dit-button>
         </form-group>
-        <p>
-          <dit-button @click.native="handleDisabledButtons" size="small">
-            {{nextButtonStatus}} buttons
-          </dit-button>
-        </p>
+        <form-group label="Disabled" variant="checkbox">
+          <dit-input type="checkbox" v-model="buttonsDisabled" @checkbox-toggle="buttonsCheckbox"/>
+        </form-group>
+        <form-group label="Are you sure?" variant="radio" hint="Think carefully.">
+          <dit-input type="radio" v-model="buttonsDisabled" name="test" id="test1"/>
+          <label class="form-label" for="test1">Yes</label>
+          <dit-input type="radio" v-model="buttonsDisabled" name="test" id="test2"/>
+          <label class="form-label" for="test2">No</label>
+        </form-group>
       </example>
 
       <example>
@@ -71,7 +76,10 @@
     },
     methods: {
       handleClick() {
-        console.log('handle click')
+        console.log('button click')
+      },
+      buttonsCheckbox(event) {
+        this.buttonsDisabled = event.value
       },
       handleDisabledButtons() {
         this.buttonsDisabled = !this.buttonsDisabled
@@ -92,6 +100,16 @@
   header {
     padding: $container-padding;
     background-color: #ccc;
+    display: flex;
+
+    h1 {
+      font-weight: 500;
+      width: 9em;
+      margin: 0;
+      line-height: 1.1;
+      padding-left: 15px;
+      border-left: 3px solid #CF102D;
+    }
   }
 
   main {

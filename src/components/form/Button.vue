@@ -35,9 +35,14 @@
       box-shadow: 0 2px 0 mix($colour, #000, 60%);
     }
 
+    &:focus:not(:disabled) {
+      outline: 0;
+      box-shadow: 0 0 0 1px rgba(#fff, .7), 0 0 0 3px $outline-colour;
+    }
+
     &:active:not(:disabled) {
       background-color: mix($colour, #000, 50%);
-      box-shadow: inset 0 2px 0 mix($colour, #000, 30%);
+      box-shadow: inset 0 2px 0 mix($colour, #000, 20%);
       color: #fff;
     }
   }
@@ -62,14 +67,10 @@
     text-decoration: none;
     width: 100%;
     border-radius: 0;
+    transition: 200ms box-shadow;
 
     @media(min-width: 40em) {
       width: auto;
-    }
-
-    &:focus:not(:disabled) {
-      outline: 0;
-      box-shadow: 0 0 0 1px #fff, 0 0 0 3px $outline-colour;
     }
 
     &[disabled] {
