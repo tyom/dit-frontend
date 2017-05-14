@@ -17,7 +17,7 @@
   }
 
   .dit-example__header {
-    padding: 10px 140px 10px 20px;
+    padding: 10px 140px 10px 0;
     position: relative;
 
     code {
