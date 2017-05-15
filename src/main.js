@@ -19,7 +19,8 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: Index },
     { path: '/form-elements', component: FormElements },
-    { path: '/layout', component: Layout }
+    { path: '/layout', component: Layout },
+    { path: '*', redirect: '/' }
   ]
 })
 
