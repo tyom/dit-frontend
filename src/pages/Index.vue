@@ -9,6 +9,8 @@
 </template>
 
 <style lang="scss" scoped>
+  @import "../components/settings";
+
   nav {
     display: flex;
     margin: -10px;
@@ -25,6 +27,11 @@
 
       &:hover {
         background-color: #fff;
+      }
+
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 3px $outline-colour;
       }
     }
   }

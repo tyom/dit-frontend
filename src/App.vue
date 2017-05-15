@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <container>
-        <router-link to="/">
+        <router-link to="/" class="logo">
           <img src="./assets/crest.svg" width="100">
           <h1>Department for International Trade</h1>
         </router-link>
@@ -21,6 +21,8 @@
 </template>
 
 <style lang="scss" scoped>
+  @import "./components/settings";
+
   $container-padding: 30px;
 
   #app {
@@ -33,21 +35,6 @@
   header {
     padding: $container-padding;
     background-color: #ccc;
-
-    a {
-      display: flex;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    h1 {
-      font-weight: 500;
-      width: 9em;
-      margin: 0;
-      line-height: 1.1;
-      padding-left: 15px;
-      border-left: 3px solid #CF102D;
-    }
 
     nav {
       background: #555;
@@ -69,12 +56,48 @@
           color: #fff;
           background: #454545;
         }
+
+        &:focus {
+          position: relative;
+          outline: 0;
+          box-shadow: 0 0 0 3px $outline-colour;
+        }
       }
 
       a.router-link-active {
         background-color: #333;
         color: #fff;
       }
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    color: inherit;
+    padding: 10px;
+    margin: -10px;
+    text-decoration: none;
+    outline: none;
+
+    &:focus {
+      box-shadow: inset 0 0 0 3px $outline-colour;
+    }
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    h1 {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: 500;
+      width: 9em;
+      margin: 0;
+      line-height: 1.1;
+      padding-left: 15px;
+      margin-left: 10px;
+      border-left: 3px solid #CF102D;
     }
   }
 
