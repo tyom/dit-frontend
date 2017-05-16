@@ -1,5 +1,5 @@
 import Container from './Container.vue'
 
-export {
+export default {
   Container
 }

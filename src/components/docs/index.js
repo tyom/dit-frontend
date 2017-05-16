@@ -1,5 +1,5 @@
 import Example from './Example.vue'
 
-export {
+export default {
   Example
 }
