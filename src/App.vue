@@ -93,10 +93,9 @@
       vertical-align: middle;
       font-weight: 500;
       width: 9em;
-      margin: 0;
+      margin: 0 0 0 10px;
       line-height: 1.1;
       padding-left: 15px;
-      margin-left: 10px;
       border-left: 3px solid #CF102D;
     }
   }
