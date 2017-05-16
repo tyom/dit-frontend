@@ -21,8 +21,8 @@ module.exports = {
         options: {
           postcss: [require('postcss-cssnext')()],
           loaders: {
-            'scss': 'vue-style-loader!css-loader?sourceMap!sass-loader?sourceMap!postcss-loader?sourceMap',
-            'postcss': 'vue-style-loader!css-loader?sourceMap!postcss-loader?sourceMap',
+            scss: 'vue-style-loader!css-loader?sourceMap!sass-loader?sourceMap!postcss-loader?sourceMap',
+            postcss: 'vue-style-loader!css-loader?sourceMap!postcss-loader?sourceMap',
           }
         }
       },

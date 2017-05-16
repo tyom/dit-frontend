@@ -30,6 +30,7 @@
     -moz-osx-font-smoothing: grayscale;
     background-color: #eee;
     min-height: 100vh;
+    font-size: 18px;
   }
 
   header {
@@ -50,7 +51,6 @@
         padding: 15px 20px;
         text-decoration: none;
         font-weight: 500;
-        margin-right: 1px;
 
         &:hover {
           color: #fff;
