@@ -1,6 +1,6 @@
-# dit-frontend
+# dit-vue
 
-> DIT front-end components
+> DIT components for Vue
 
 ## Build Setup
 
