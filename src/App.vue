@@ -64,7 +64,8 @@
         }
       }
 
-      a.router-link-active {
+      a.router-link-active,
+      a:active {
         background-color: #333;
         color: #fff;
       }
