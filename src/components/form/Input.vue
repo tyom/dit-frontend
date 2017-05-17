@@ -1,19 +1,9 @@
 <template>
   <input
-    type="checkbox"
-    class="dit-checkbox"
-    :id="$parent.groupId"
-    :required="required"
-    v-if="type === 'checkbox'"
-    v-model="inputValue"
-    @change="handleCheckbox"
-  >
-  <input
     class="form-control"
     :type="type"
     :id="$parent.groupId"
     :required="required"
-    v-else
   >
 </template>
 
@@ -24,11 +14,6 @@
         return this.value
       }
     },
-    methods: {
-      handleCheckbox() {
-        this.$emit('checkbox-toggle', { value: !this.inputValue })
-      }
-    },
     props: {
       type: {
         type: String,
@@ -36,9 +21,8 @@
       },
       required: {
         type: Boolean
-      },
-      value: Boolean // special prop received from v-model
-    }
+      }
+    },
   }
 </script>
 

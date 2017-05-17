@@ -6,6 +6,9 @@
     <div class="dit-example__preview">
       <slot></slot>
     </div>
+    <div class="dit-example__toolbar" v-if="$slots.toolbar">
+      <slot name="toolbar"></slot>
+    </div>
   </section>
 </template>
 
@@ -47,9 +50,21 @@
     }
   }
 
-  .dit-example__preview {
+  .dit-example__preview, {
     background-color: #fff;
     box-shadow: 0 5px 0 -3px #ddd;
     padding: 20px;
+  }
+
+  .dit-example__toolbar {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px 20px;
+    box-shadow: 0 5px 0 -3px #ddd;
+
+    menu {
+      padding: 0;
+      margin: 0;
+    }
   }
 </style>

@@ -17,9 +17,6 @@
       value: String,
       inline: Boolean,
     },
-    components: {
-      DitInput
-    },
     computed: {
       buttonId() {
         return kebabCase(this.label) + '-' + this._uid
