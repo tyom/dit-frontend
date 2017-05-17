@@ -93,7 +93,7 @@
       }
 
       &:focus + .form-label::before {
-        box-shadow: 0 0 0 3px $outline-colour;
+        box-shadow: 0 0 0 1px rgba(#fff, .8), 0 0 0 3px $outline-colour;
       }
     }
   }
