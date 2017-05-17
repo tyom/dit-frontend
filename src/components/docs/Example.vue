@@ -50,7 +50,7 @@
     }
   }
 
-  .dit-example__preview, {
+  .dit-example__preview {
     background-color: #fff;
     box-shadow: 0 5px 0 -3px #ddd;
     padding: 20px;
