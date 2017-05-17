@@ -1,6 +1,8 @@
 <template>
   <container>
+
     <h1>Form elements</h1>
+
     <example>
       <h2 slot="title">
         Buttons
@@ -12,12 +14,6 @@
       </form-group>
       <form-group label="Disabled state" variant="checkbox">
         <dit-input type="checkbox" v-model="buttonsDisabled" @checkbox-toggle="buttonsCheckbox"/>
-      </form-group>
-      <form-group label="Are you sure?" variant="radio" hint="Think carefully.">
-        <dit-input type="radio" v-model="buttonsDisabled" name="test" id="test1"/>
-        <label class="form-label" for="test1">Yes</label>
-        <dit-input type="radio" v-model="buttonsDisabled" name="test" id="test2"/>
-        <label class="form-label" for="test2">No</label>
       </form-group>
     </example>
 
@@ -46,6 +42,17 @@
         <dit-select :options="[{value: 1, label: 'Option #1'}]" initialSelection="1"></dit-select>
       </form-group>
     </example>
+
+    <example>
+      <h2 slot="title">
+        <code>radio-group</code> with <code>radio-button</code>
+      </h2>
+      <fieldset-group legend="Are you sure?" hint="Think carefully.">
+        <radio-button value="y" label="Yes" name="test" inline/>
+        <radio-button value="n" label="No" name="test" inline/>
+      </fieldset-group>
+    </example>
+
   </container>
 </template>
 
@@ -76,6 +83,6 @@
     },
     components: {
       ...FormElements
-    }
+    },
   }
 </script>

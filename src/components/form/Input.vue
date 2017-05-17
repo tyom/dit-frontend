@@ -1,17 +1,10 @@
 <template>
   <input
-    type="radio"
-    class="dit-radio"
-    :if="$parent.groupId"
-    :required="required"
-    v-if="type === 'radio'"
-  >
-  <input
     type="checkbox"
     class="dit-checkbox"
     :id="$parent.groupId"
     :required="required"
-    v-else-if="type === 'checkbox'"
+    v-if="type === 'checkbox'"
     v-model="inputValue"
     @change="handleCheckbox"
   >
@@ -93,7 +86,7 @@
           box-sizing: border-box;
           position: absolute;
           left: 0;
-          top: -3px;
+          top: 0;
           height: 30px;
           width: 30px;
           transition: 200ms;

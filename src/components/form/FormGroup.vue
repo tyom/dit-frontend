@@ -4,13 +4,6 @@
       <slot></slot>
       <group-label v-if="label" :optional="optional">{{label}}</group-label>
     </template>
-    <template v-else-if="variant === 'radio'">
-      <fieldset>
-        <legend>{{label}}</legend>
-        <p class="form-hint" v-if="hint">{{hint}}</p>
-        <slot></slot>
-      </fieldset>
-    </template>
     <template v-else>
       <group-label v-if="label" :optional="optional">{{label}}</group-label>
       <p class="form-hint" v-if="hint">{{hint}}</p>
@@ -20,7 +13,7 @@
 </template>
 
 <script>
-  import { kebabCase } from 'lodash'
+  import kebabCase from 'lodash/kebabCase'
 
   export default {
     name: 'form-group',
@@ -45,6 +38,7 @@
       }
     },
     components: {
+      // (optional) on label
       GroupLabel: {
         props: ['optional'],
         template: `
