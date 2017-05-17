@@ -9,7 +9,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
     filename: '[name].build.js',
     library: 'DITComponents',
     libraryTarget: 'umd',
@@ -60,7 +59,7 @@ module.exports = {
   devtool: '#eval-source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './index.template.html',
     }),
   ]
 }
