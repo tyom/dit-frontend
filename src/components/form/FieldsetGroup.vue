@@ -30,5 +30,13 @@
 <style lang="scss">
   .fieldset-group {
     margin: 30px 0;
+
+    > .form-group:first-of-type {
+      margin-top: 10px;
+    }
+
+    > .form-group:last-of-type {
+      margin-bottom: 10px;
+    }
   }
 </style>

@@ -58,8 +58,12 @@
   }
 
   .form-group--inline {
-    .form-control {
+    .form-label {
       display: inline-block;
+    }
+
+    .form-control {
+      width: auto;
     }
 
     @media(min-width: 40em) {
@@ -77,13 +81,13 @@
   .form-label {
     margin-bottom: 10px;
     font-size: 1.2em;
-    display: inline-block;
+    display: block;
     font-weight: 600;
   }
 
   .form-hint {
     color: #6f777b;
-    margin: -5px 0 10px;
+    margin: 0 0 10px;
   }
 
   .form-group.has-error {

@@ -30,5 +30,6 @@
     color: inherit;
     font-size: 1em;
     height: 2.4em;
+    max-width: 50em;
   }
 </style>

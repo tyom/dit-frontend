@@ -8,9 +8,9 @@
         Buttons
       </h2>
       <form-group>
-        <dit-button :disabled="buttonsDisabled" variant="primary" @click.native="handleClick('primary')">Primary</dit-button>
-        <dit-button :disabled="buttonsDisabled" @click.native="handleClick('standard')">Standard</dit-button>
-        <dit-button :disabled="buttonsDisabled" variant="warning" @click.native="handleClick('warning')">Warning</dit-button>
+        <dit-button :disabled="buttonsDisabled" variant="primary" @click.native="handleButtonsClick('primary')">Primary</dit-button>
+        <dit-button :disabled="buttonsDisabled" @click.native="handleButtonsClick('standard')">Standard</dit-button>
+        <dit-button :disabled="buttonsDisabled" variant="warning" @click.native="handleButtonsClick('warning')">Warning</dit-button>
       </form-group>
       <p v-if="buttonClicked">
         <strong>{{buttonClicked}}</strong> button clicked
@@ -68,6 +68,45 @@
       </fieldset-group>
     </example>
 
+    <example>
+      <h2 slot="title">
+        Sample form
+      </h2>
+      <form>
+        <form-group label="Name">
+          <dit-input name="name"/>
+        </form-group>
+        <form-group label="Trading name" optional>
+          <dit-input name="trading-name"/>
+        </form-group>
+        <fieldset-group legend="Primary address">
+          <form-group label="Postcode">
+            <dit-input name="postcode" variant="short"/>
+            <dit-button type="button" @click.native="showPrimaryAddress = !showPrimaryAddress">Find UK address</dit-button>
+          </form-group>
+          <form-group label="Select an address from the drop down" v-if="showPrimaryAddress">
+            <dit-select>
+              <option value="">Please select your address</option>
+            </dit-select>
+          </form-group>
+        </fieldset-group>
+        <fieldset-group legend="Is this an HQ?">
+          <radio-button value="false" label="Not a headquarters" name="is-hq"/>
+          <radio-button value="ehq" label="European headquarters" name="is-hq"/>
+          <radio-button value="ghq" label="Global headquarters" name="is-hq"/>
+          <radio-button value="ukhq" label="UK headquarters" name="is-hq"/>
+        </fieldset-group>
+        <form-group label="Sector">
+          <dit-select>
+            <option value="">ICT</option>
+          </dit-select>
+        </form-group>
+        <form-group label="Website" optional>
+          <dit-input name="website"/>
+        </form-group>
+      </form>
+    </example>
+
   </container>
 </template>
 
@@ -81,6 +120,7 @@
         formGroupHasErrors: false,
         selectsHaveErrors: true,
         buttonClicked: null,
+        showPrimaryAddress: false,
       }
     },
     computed: {
@@ -89,7 +129,7 @@
       }
     },
     methods: {
-      handleClick(type) {
+      handleButtonsClick(type) {
         this.buttonClicked = type
       },
     },
