@@ -9,8 +9,13 @@
 </template>
 
 <script>
+  import Container from '../layout/Container.vue'
+
   export default {
-    name: 'global-header'
+    name: 'global-header',
+    components: {
+      Container
+    }
   }
 </script>
 
