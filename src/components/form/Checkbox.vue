@@ -69,6 +69,7 @@
     & + .form-label {
       cursor: pointer;
       margin-bottom: 0;
+      display: table;
       vertical-align: middle;
       position: relative;
       user-select: none;

@@ -22,7 +22,7 @@
 
   .global-nav {
     background: #555;
-    font-size: 1.3em;
+    font-size: 1.1em;
 
     .container {
       display: flex;
@@ -37,7 +37,7 @@
 
     &:hover {
       color: #fff;
-      background: #454545;
+      background: rgba(#000, .2);
     }
 
     &:focus {
@@ -48,7 +48,7 @@
 
     &.router-link-active,
     &:active {
-      background-color: #333;
+      background-color: rgba(#000, .4);
       color: #fff;
     }
   }

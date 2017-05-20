@@ -3,10 +3,7 @@
 
     <h1>Form elements</h1>
 
-    <example>
-      <h2 slot="title">
-        Buttons
-      </h2>
+    <example title="Buttons">
       <form-group>
         <dit-button :disabled="buttonsDisabled" variant="primary" @click.native="handleButtonsClick('primary')">Primary</dit-button>
         <dit-button :disabled="buttonsDisabled" @click.native="handleButtonsClick('standard')">Standard</dit-button>

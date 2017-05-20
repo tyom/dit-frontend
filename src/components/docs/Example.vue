@@ -1,7 +1,9 @@
 <template>
   <section class="dit-example">
-    <header v-if="$slots.title" class="dit-example__header">
-      <slot name="title"></slot>
+    <header v-if="$slots.title || title" class="dit-example__header">
+      <slot name="title">
+        <h2>{{title}}</h2>
+      </slot>
     </header>
     <div class="dit-example__preview">
       <slot></slot>
@@ -11,6 +13,14 @@
     </div>
   </section>
 </template>
+
+<script>
+  export default {
+    props: {
+      title: String
+    },
+  }
+</script>
 
 <style lang="scss">
   .dit-example {
