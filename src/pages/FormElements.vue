@@ -76,6 +76,9 @@
         <form-group label="Name">
           <dit-input name="name"/>
         </form-group>
+        <form-group label="Description" hint="Text box will grow or shrink as required">
+          <dit-textarea></dit-textarea>
+        </form-group>
         <form-group label="Trading name" optional>
           <dit-input name="trading-name"/>
         </form-group>
