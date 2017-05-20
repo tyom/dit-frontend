@@ -16,7 +16,7 @@ Vue.component('container', Layout.Container)
 Vue.component('example', Docs.Example)
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   routes: [
     { path: '/', component: IndexPage },
     { path: '/form-elements', component: FormElementsPage },
