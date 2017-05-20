@@ -14,7 +14,7 @@
     "examples:run:simple": "webpack-dev-server --content-base examples/ --open",
     "examples:run:webpack": "cd examples/webpack && webpack-dev-server --open",
     "examples:run:components": "cd examples/components && webpack-dev-server --open",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && surge --project ./dist --domain envious-rat.surge.sh"
   },
   "dependencies": {
     "lodash": "^4.17.4",
