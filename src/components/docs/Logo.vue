@@ -1,9 +1,19 @@
 <template>
   <router-link to="/" class="logo">
-    <img src="../../assets/crest.svg" width="100">
-    <h1>Department for International Trade</h1>
+    <crest class="logo__img"></crest>
+    <h1 class="logo__text">Department for International Trade</h1>
   </router-link>
 </template>
+
+<script>
+  import Crest from '../../assets/crest.svg'
+
+  export default {
+    components: {
+      Crest
+    }
+  }
+</script>
 
 <style lang="scss">
   @import "../settings";
@@ -28,20 +38,6 @@
       box-shadow: inset 0 0 0 3px $outline-colour;
     }
 
-    img {
-      display: block;
-      vertical-align: middle;
-      width: 60px;
-      margin: 0 10px 10px 0;
-
-      @media(min-width: $breakpoint) {
-        display: inline-block;
-        border-right: 3px solid #CF102D;
-        padding-right: 10px;
-        margin: 0 10px 0 0;
-      }
-    }
-
     h1 {
       display: inline-block;
       vertical-align: middle;
@@ -50,7 +46,23 @@
       margin: 0;
       font-size: 1.4em;
       line-height: 1.1;
-      color: #333;
     }
   }
+
+  .logo__img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    fill: #fff;
+    height: auto;
+    margin: 0 10px 10px 0;
+
+    @media(min-width: $breakpoint) {
+      display: inline-block;
+      border-right: 3px solid #CF102D;
+      padding-right: 10px;
+      margin: 0 10px 0 0;
+    }
+  }
+
 </style>

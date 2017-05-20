@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <header>
-      <container>
-        <logo></logo>
-      </container>
-    </header>
+    <global-header>
+      <logo></logo>
+    </global-header>
     <global-nav :items="globalNavItems"></global-nav>
     <main>
       <router-view></router-view>
@@ -15,6 +13,7 @@
 <script>
   import GlobalNav from './components/docs/GlobalNav.vue'
   import Logo from './components/docs/Logo.vue'
+  import {Layout} from './components'
 
   export default {
     data() {
@@ -26,6 +25,7 @@
       }
     },
     components: {
+      ...Layout,
       GlobalNav,
       Logo,
     }
@@ -38,11 +38,9 @@
   $container-padding: 30px;
 
   #app {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #eee;
     min-height: 100vh;
     font-size: 18px;
+    background-color: #eee;
   }
 
   header {
