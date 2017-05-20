@@ -5,19 +5,41 @@
         <h2>{{title}}</h2>
       </slot>
     </header>
-    <div class="dit-example__preview">
+    <div class="dit-example__preview" ref="preview">
       <slot></slot>
     </div>
     <div class="dit-example__toolbar" v-if="$slots.toolbar">
       <slot name="toolbar"></slot>
     </div>
+    <div class="dit-example__code" v-if="htmlCode">
+      <pre><code class="html" v-html="htmlCode"></code></pre>
+    </div>
   </section>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import pretty from 'pretty'
+  import highlight from 'highlight.js'
+
+  import 'highlight.js/styles/github.css'
+
   export default {
+    data() {
+      return {
+        htmlCode: null,
+      }
+    },
     props: {
-      title: String
+      title: String,
+    },
+    mounted() {
+      let rawHtml = this.$refs.preview.innerHTML
+      if (rawHtml) {
+        const pattern = new RegExp('<!--[\s\S]*?(?:-->)', 'g')
+        const highlighted = highlight.highlight('html', pretty(rawHtml.replace(pattern, '')))
+        this.htmlCode = highlighted.value
+      }
     },
   }
 </script>
@@ -75,6 +97,22 @@
     menu {
       padding: 0;
       margin: 0;
+    }
+  }
+
+  .dit-example__code {
+    border-top: 2px solid #ddd;
+
+    pre {
+      margin: 0;
+    }
+
+    code {
+      font-size: .8em;
+      background: #e3e3e3;
+      margin: 0;
+      display: block;
+      padding: 15px;
     }
   }
 </style>
