@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single-page ¢set-up with script tag</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="./dist/components.build.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    main {
+      padding-bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <global-header></global-header>
+    <main>
+      <div class="container">
+        <h1>Example of using simple single-page set-up with <code>script</code> tag</h1>
+
+        <form>
+          <form-group label="Name">
+            <dit-input name="name"></dit-input>
+          </form-group>
+          <form-group label="Description" hint="Text box will grow or shrink as required">
+            <dit-textarea></dit-textarea>
+          </form-group>
+          <form-group label="Trading name" optional>
+            <dit-input name="trading-name"></dit-input>
+          </form-group>
+          <fieldset-group legend="Primary address">
+            <form-group label="Postcode">
+              <dit-input name="postcode" variant="short"></dit-input>
+              <dit-button type="button" @click.native="showPrimaryAddress = !showPrimaryAddress">Find UK address</dit-button>
+            </form-group>
+            <form-group label="Select an address from the drop down" v-if="showPrimaryAddress">
+              <dit-select>
+                <option value="">Please select your address</option>
+              </dit-select>
+            </form-group>
+          </fieldset-group>
+          <fieldset-group legend="Is this an HQ?">
+            <radio-button value="false" label="Not a headquarters" name="is-hq"></radio-button>
+            <radio-button value="ehq" label="European headquarters" name="is-hq"></radio-button>
+            <radio-button value="ghq" label="Global headquarters" name="is-hq"></radio-button>
+            <radio-button value="ukhq" label="UK headquarters" name="is-hq"></radio-button>
+          </fieldset-group>
+          <form-group label="Sector">
+            <dit-select>
+              <option value="">ICT</option>
+            </dit-select>
+          </form-group>
+          <form-group label="Website" optional>
+            <dit-input name="website"></dit-input>
+          </form-group>
+        </form>
+
+        <p>
+          <dit-button @click.native="handleButtonPress">{{buttonText}}</dit-button>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        buttonText: 'Press the button',
+        showPrimaryAddress: false
+      },
+      components: Object.assign({}, DITComponents.FormElements, DITComponents.Layout),
+      methods: {
+        handleButtonPress: function () {
+          this.buttonText = this.buttonText.split('').reverse().join('')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
