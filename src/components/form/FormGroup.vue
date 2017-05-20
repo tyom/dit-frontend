@@ -78,18 +78,6 @@
     }
   }
 
-  .form-label {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    display: block;
-    font-weight: 600;
-  }
-
-  .form-hint {
-    color: #6f777b;
-    margin: 0 0 10px;
-  }
-
   .form-group.has-error {
     .form-label {
       color: #b10e1e;

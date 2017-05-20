@@ -4,6 +4,7 @@
 
 <script>
   export default {
+    name: 'dit-input',
     computed: {
       inputClassName() {
         return {
@@ -32,10 +33,7 @@
     &[type="text"],
     &[type="number"],
     &[type="password"] {
-      border: 2px solid;
-      padding: 8px;
       width: 100%;
-      max-width: 50em;
     }
   }
 </style>
