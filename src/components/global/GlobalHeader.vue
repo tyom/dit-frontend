@@ -21,7 +21,7 @@
 
 <style lang="scss">
   .global-header {
-    padding: 8px 16px;
+    padding: 8px 0;
     background-color: #0b0c0c;
     color: #eee;
     -webkit-font-smoothing: antialiased;
