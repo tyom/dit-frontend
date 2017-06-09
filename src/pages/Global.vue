@@ -4,6 +4,16 @@
     <example title="Global header">
       <global-header></global-header>
     </example>
+
+    <example title="Phase banner">
+      <phase-banner tag="beta">
+        This is a new service – your <a href="#">feedback</a> will help us to improve it.
+      </phase-banner>
+    </example>
+
+    <example title="Global footer">
+      <global-footer></global-footer>
+    </example>
   </container>
 </template>
 

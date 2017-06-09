@@ -14,3 +14,20 @@ h5,
 h6 {
   margin: 1em 0;
 }
+
+a {
+  color: inherit;
+
+  &:link {
+    text-decoration-skip: ink;
+    color: #005ea5;
+  }
+
+  &:hover {
+    color: #2b8cc4;
+  }
+
+  &:visited {
+    color: #4c2c92;
+  }
+}

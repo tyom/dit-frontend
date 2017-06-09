@@ -23,9 +23,15 @@
   .global-nav {
     background: #555;
     font-size: 1.1em;
+    color: #fff;
 
     .container {
       display: flex;
+    }
+
+    a:link,
+    a:visited {
+      color: inherit;
     }
   }
 

@@ -30,5 +30,10 @@
     h1 {
       margin: 0;
     }
+
+    a:link,
+    a:visited {
+      color: inherit;
+    }
   }
 </style>
