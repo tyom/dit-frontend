@@ -3,15 +3,15 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 
 import IndexPage from './pages/Index.vue'
+import GlobalPage from './pages/Global.vue'
 import FormElementsPage from './pages/FormElements.vue'
 import LayoutPage from './pages/Layout.vue'
 
 import Layout from './components/layout'
 import Docs from './components/docs'
 
-
 Vue.use(VueRouter)
-// Globally components
+// Globally register components
 Vue.component('container', Layout.Container)
 Vue.component('example', Docs.Example)
 
@@ -20,6 +20,7 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: IndexPage },
     { path: '/form-elements', component: FormElementsPage },
+    { path: '/global', component: GlobalPage },
     { path: '/layout', component: LayoutPage },
     { path: '*', redirect: '/' }
   ]
