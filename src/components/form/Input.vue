@@ -1,5 +1,11 @@
 <template>
-  <input :class="inputClassName" :type="type" :id="$parent.groupId" :required="required">
+  <input
+    :class="inputClassName"
+    :type="type"
+    :id="$parent.groupId"
+    :required="required"
+    @input="updateValue($event.target.value)"
+  >
 </template>
 
 <script>
@@ -22,6 +28,11 @@
         type: Boolean
       },
       variant: String,
+    },
+    methods: {
+      updateValue(value) {
+        this.$emit('input', value)
+      }
     },
   }
 </script>
