@@ -24,6 +24,10 @@ a {
     color: #005ea5;
   }
 
+  &:visited {
+    color: #4c2c92;
+  }
+
   &:hover {
     color: #2b8cc4;
   }
@@ -33,7 +37,7 @@ a {
     box-shadow: 0 0 0 2px $outline-colour;
   }
 
-  &:visited {
-    color: #4c2c92;
+  &:not([href]) {
+    color: inherit;
   }
 }
