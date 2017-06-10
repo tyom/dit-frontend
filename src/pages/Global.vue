@@ -11,6 +11,10 @@
       </phase-banner>
     </example>
 
+    <example title="Breadcrumbs">
+      <breadcrumbs :items="breadcrumbs"></breadcrumbs>
+    </example>
+
     <example title="Global footer">
       <global-footer></global-footer>
     </example>
@@ -21,6 +25,15 @@
   import {Global} from '../components'
 
   export default {
+    data() {
+      return {
+        breadcrumbs: [
+          {url: '/', title: 'Home'},
+          {url: '/companies/', title: 'Companies'},
+          {title: 'Hilton UK Ltd'},
+        ]
+      }
+    },
     components: {
       ...Global
     }
