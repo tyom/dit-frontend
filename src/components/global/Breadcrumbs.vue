@@ -24,20 +24,26 @@
     a:link,
     a:visited {
       color: $text-colour;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
   .breadcrumbs__list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: -2px 0;
+    white-space: nowrap;
   }
 
   .breadcrumbs__item {
     display: inline-block;
     vertical-align: top;
-    white-space: nowrap;
     max-width: 20em;
+    padding: 2px;
+    margin-right: -4px;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #888;
@@ -47,9 +53,9 @@
       display: inline-block;
       vertical-align: top;
       height: 1em;
-      font-size: 1.4em;
+      font-size: 1.5em;
       line-height: 1;
-      margin: -1px 6px 0;
+      margin: -2px 8px 0;
       color: #ccc;
     }
   }
