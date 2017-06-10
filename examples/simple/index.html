@@ -72,7 +72,7 @@
         buttonText: 'Press the button',
         showPrimaryAddress: false
       },
-      components: Object.assign({}, DITComponents.FormElements, DITComponents.Layout),
+      components: Object.assign({}, DITComponents.FormElements, DITComponents.Layout, DITComponents.Global),
       methods: {
         handleButtonPress: function () {
           this.buttonText = this.buttonText.split('').reverse().join('')
