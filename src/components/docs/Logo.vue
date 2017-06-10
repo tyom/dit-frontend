@@ -25,9 +25,9 @@
     color: inherit;
     text-decoration: none;
     outline: none;
-    border-left: 3px solid #CF102D;
-    padding: 5px 5px 5px 15px;
-    margin: -5px;
+    border-left: 3px solid $dit-colour;
+    padding: 3px;
+    margin: -3px;
 
     @media(min-width: $breakpoint) {
       border: 0;
