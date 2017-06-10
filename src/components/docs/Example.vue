@@ -99,6 +99,8 @@
 </script>
 
 <style lang="scss">
+  @import "../settings";
+
   .dit-example {
     & + & {
       margin-top: 30px;
@@ -189,6 +191,10 @@
 
       &:active {
         background-color: #d7d7d7;
+      }
+
+      &:focus {
+        box-shadow: inset 0 0 0 2px $outline-colour;
       }
     }
 

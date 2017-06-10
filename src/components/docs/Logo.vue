@@ -34,10 +34,6 @@
       padding-left: 5px;
     }
 
-    &:focus {
-      box-shadow: inset 0 0 0 3px $outline-colour;
-    }
-
     h1 {
       display: inline-block;
       vertical-align: middle;

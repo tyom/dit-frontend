@@ -48,8 +48,6 @@
 
     &:focus {
       position: relative;
-      outline: 0;
-      box-shadow: 0 0 0 3px $outline-colour;
     }
 
     &.router-link-active,
