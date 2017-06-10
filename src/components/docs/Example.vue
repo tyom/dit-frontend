@@ -108,7 +108,7 @@
   }
 
   .dit-example__header {
-    padding: 10px 140px 10px 0;
+    padding: 10px 10px 10px 120px;
     position: relative;
 
     code {
@@ -118,18 +118,21 @@
       border-radius: 3px;
     }
 
-    &::after {
+    &::before {
       content: "Example";
       position: absolute;
-      background-color: #fff;
-      right: 0;
+      top: 0;
       bottom: 0;
+      left: 0;
+      height: 30px;
+      line-height: 30px;
+      margin: auto;
       font-weight: 500;
-      color: #aaa;
+      color: #fff;
+      background-color: #555;
       display: block;
-      font-size: 1.1em;
-      letter-spacing: .01em;
-      padding: 13px 20px;
+      letter-spacing: .05em;
+      padding: 2px 10px 0;
       text-transform: uppercase;
     }
 
@@ -140,15 +143,12 @@
 
   .dit-example__preview {
     background-color: #fff;
-    box-shadow: 0 5px 0 -3px #ddd;
     padding: 20px;
   }
 
   .dit-example__toolbar {
     background: #fff;
-    border-top: 1px solid #ddd;
     padding: 10px 20px;
-    box-shadow: 0 5px 0 -3px #ddd;
 
     menu {
       padding: 0;
@@ -157,6 +157,9 @@
   }
 
   .dit-example__code {
+    background-color: #ccc;
+    padding: 3px;
+
     pre {
       margin: 0;
     }
@@ -166,21 +169,20 @@
       background: #e3e3e3;
       margin: 0;
       display: block;
-      padding: 15px;
+      padding: 17px;
     }
   }
 
   .dit-example__code-selector {
     margin: 0;
-    padding: 5px 5px 0;
-    background-color: #ccc;
+    padding: 0;
 
     button {
       font-size: .8em;
       font-weight: 500;
       color: #444;
       border: 0;
-      padding: 10px 15px;
+      padding: 10px 17px;
       background-color: transparent;
       cursor: pointer;
       outline: 0;
