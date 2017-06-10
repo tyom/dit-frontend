@@ -3,6 +3,7 @@
     <h1>DIT Front-end components</h1>
     <nav>
       <router-link to="/layout">Layout</router-link>
+      <router-link to="/global">Global components</router-link>
       <router-link to="/form-elements">Form elements</router-link>
     </nav>
   </container>
@@ -27,11 +28,6 @@
 
       &:hover {
         background-color: #fff;
-      }
-
-      &:focus {
-        outline: 0;
-        box-shadow: 0 0 0 3px $outline-colour;
       }
     }
   }

@@ -71,7 +71,8 @@
       </h2>
       <form>
         <form-group label="Name">
-          <dit-input name="name"/>
+          <dit-input name="name" v-model="test"/>
+          <p>{{test}}</p>
         </form-group>
         <form-group label="Description" hint="Text box will grow or shrink as required">
           <dit-textarea></dit-textarea>
@@ -121,6 +122,7 @@
         selectsHaveErrors: true,
         buttonClicked: null,
         showPrimaryAddress: false,
+        test: '',
       }
     },
     computed: {

@@ -23,9 +23,15 @@
   .global-nav {
     background: #555;
     font-size: 1.1em;
+    color: #fff;
 
     .container {
       display: flex;
+    }
+
+    a:link,
+    a:visited {
+      color: inherit;
     }
   }
 
@@ -42,8 +48,6 @@
 
     &:focus {
       position: relative;
-      outline: 0;
-      box-shadow: 0 0 0 3px $outline-colour;
     }
 
     &.router-link-active,
