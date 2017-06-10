@@ -2,7 +2,7 @@
   <div class="global-header">
     <container>
       <slot>
-        <h1>TRADE.GOV.UK</h1>
+        <h1 class="global-header__title">TRADE.GOV.UK</h1>
       </slot>
     </container>
   </div>
@@ -27,14 +27,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    h1 {
-      margin: 0;
-    }
-
     a:link,
     a:visited {
       color: inherit;
       text-decoration: none;
     }
+  }
+
+  .global-header__title {
+    margin: 0;
+    font-size: 1.8rem;
   }
 </style>
