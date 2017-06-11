@@ -37,7 +37,7 @@
   @import "../tools";
 
   .global-footer {
-    padding: 32px 16px;
+    padding: 32px 0;
     background-color: #dee0e2;
     border-top: 1px solid #bfc1c3;
     font-size: .9em;
