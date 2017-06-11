@@ -17,19 +17,18 @@
 
 <style lang="scss">
   @import "../settings";
-
-  $breakpoint: 28em;
+  @import "../tools";
 
   .logo {
     display: inline-block;
     color: inherit;
     text-decoration: none;
     outline: none;
-    border-left: 3px solid $dit-colour;
-    padding: 3px;
-    margin: -3px;
+    border-left: 4px solid $dit-colour;
+    padding: 3px 3px 3px 10px;
+    margin: -3px -3px -3px -10px;
 
-    @media(min-width: $breakpoint) {
+    @include media('>phone') {
       border: 0;
       padding-left: 5px;
     }
@@ -51,11 +50,11 @@
     width: 60px;
     fill: #fff;
     height: auto;
-    margin: 0 10px 10px 0;
+    margin-right: 10px;
 
-    @media(min-width: $breakpoint) {
+    @include media('>phone') {
       display: inline-block;
-      border-right: 3px solid #CF102D;
+      border-right: 4px solid #CF102D;
       padding-right: 10px;
       margin: 0 10px 0 0;
     }

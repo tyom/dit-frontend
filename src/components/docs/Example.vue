@@ -100,6 +100,7 @@
 
 <style lang="scss">
   @import "../settings";
+  @import "../tools";
 
   .dit-example {
     & + & {
@@ -108,8 +109,12 @@
   }
 
   .dit-example__header {
-    padding: 10px 10px 10px 120px;
+    padding: 10px;
     position: relative;
+
+    @include media('>phone') {
+      padding-left: 120px;
+    }
 
     code {
       background: rgba(#fff, .7);
@@ -120,20 +125,24 @@
 
     &::before {
       content: "Example";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      height: 30px;
-      line-height: 30px;
-      margin: auto;
+      height: 31px;
+      line-height: 31px;
+      margin: auto auto 10px;
       font-weight: 500;
       color: #fff;
       background-color: #555;
-      display: block;
+      display: inline-block;
       letter-spacing: .05em;
       padding: 2px 10px 0;
       text-transform: uppercase;
+
+      @include media('>phone') {
+        margin-bottom: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+      }
     }
 
     h2 {
@@ -149,6 +158,7 @@
   .dit-example__toolbar {
     background: #fff;
     padding: 10px 20px;
+    border-top: 1px solid #ddd;
 
     menu {
       padding: 0;
@@ -170,6 +180,7 @@
       margin: 0;
       display: block;
       padding: 17px;
+      overflow: auto;
     }
   }
 

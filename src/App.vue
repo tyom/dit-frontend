@@ -34,27 +34,20 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import "./components/settings";
+  @import "./components/tools";
 
-  $container-padding: 30px;
+  html {
+    background-color: #eee;
+  }
 
   #app {
     min-height: 100vh;
     font-size: 18px;
-    background-color: #eee;
-  }
 
-  header {
-    padding: $container-padding;
-    background-color: #ccc;
-  }
-
-  main {
-    padding: $container-padding;
-  }
-
-  form {
-    width: 600px;
+    > main {
+      padding-bottom: 20px;
+    }
   }
 </style>

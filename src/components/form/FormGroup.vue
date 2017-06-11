@@ -53,6 +53,8 @@
 </script>
 
 <style lang="scss">
+  @import "../tools";
+
   .form-group {
     margin: 30px 0;
   }
@@ -62,11 +64,10 @@
       display: inline-block;
     }
 
-    .form-control {
-      width: auto;
-    }
-
-    @media(min-width: 40em) {
+    @include media('>phone') {
+      .form-control {
+        width: auto;
+      }
       .form-label {
         margin-right: 10px;
         margin-bottom: 0;

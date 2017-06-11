@@ -19,6 +19,7 @@
 
 <style lang="scss">
   @import "../settings";
+  @import "../tools";
 
   .global-nav {
     background: #555;
@@ -26,7 +27,12 @@
     color: #fff;
 
     .container {
-      display: flex;
+      @include media('>phone') {
+        display: flex;
+      }
+      @include media('<phone') {
+        padding: 0;
+      }
     }
 
     a:link,
@@ -40,6 +46,7 @@
     padding: 15px 20px;
     text-decoration: none;
     font-weight: 500;
+    display: block;
 
     &:hover {
       color: #fff;

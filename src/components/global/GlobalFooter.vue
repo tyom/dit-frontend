@@ -51,10 +51,6 @@
     a:hover {
       color: #222;
     }
-
-    &:focus {
-
-    }
   }
 
   .global-footer__links,
@@ -64,7 +60,9 @@
   }
 
   .global-footer__links {
-    width: 75%;
+    @include media(">phone") {
+      width: 75%;
+    }
   }
 
   .global-footer__links-list {
@@ -75,7 +73,10 @@
 
   .global-footer__open-government-licence {
     margin-top: 16px;
-    padding-left: 50px;
+
+    @include media(">phone") {
+      padding-left: 50px;
+    }
   }
 
   .global-footer__ogl-logo {
@@ -83,13 +84,24 @@
     background: url("../../assets/open-government-licence_2x.png") no-repeat;
     background-size: 41px 17px;
     margin-bottom: 10px;
-    margin-left: -50px;
-    float: left;
+    display: block;
+
+    @include media(">phone") {
+      float: left;
+      margin-left: -50px;
+    }
   }
 
   .global-footer__copyright {
-    width: 25%;
-    text-align: right;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+
+    @include media(">phone") {
+      width: 25%;
+      display: inline-block;
+      text-align: right;
+    }
 
     a {
       display: inline-block;

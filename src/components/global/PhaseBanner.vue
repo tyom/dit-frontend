@@ -17,6 +17,8 @@
 </script>
 
 <style lang="scss">
+  @import "../tools";
+
   .phase-banner {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -26,7 +28,7 @@
     line-height: 1.2;
     width: 100%;
 
-    @media(min-width: 50em) {
+    @include media('>tablet') {
       font-size: 1rem;
     }
   }

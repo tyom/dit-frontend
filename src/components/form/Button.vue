@@ -25,6 +25,7 @@
 
 <style lang="scss">
   @import "../settings";
+  @import "../tools";
 
   @mixin buttonColour($colour: $light-grey) {
     background-color: mix($colour, #000, 100%);
@@ -69,7 +70,7 @@
     border-radius: 0;
     transition: 200ms box-shadow;
 
-    @media(min-width: 40em) {
+    @include media('>phone') {
       width: auto;
     }
 
@@ -81,7 +82,7 @@
     * + & {
       margin-top: 10px;
 
-      @media(min-width: 40em) {
+      @include media('>phone') {
         margin-top: 0;
       }
     }
