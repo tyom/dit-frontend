@@ -106,9 +106,9 @@
     a {
       display: inline-block;
       padding: 115px 5px 5px;
-      width: 125px;
+      width: 140px;
+      white-space: nowrap;
       text-decoration: none;
-      font-size: .9em;
       text-align: center;
       background: url("../../assets/govuk-crest-2x.png") no-repeat 50% 0;
       background-size: 125px 102px;
