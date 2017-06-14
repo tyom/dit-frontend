@@ -1,6 +1,6 @@
 <template>
   <div class="phase-banner">
-    <span class="phase-banner__tag" v-if="tag">{{tag}}</span>
+    <phase-tag :phase="phase"></phase-tag>
     <span class="phase-banner__message">
       <slot></slot>
     </span>
@@ -8,11 +8,16 @@
 </template>
 
 <script>
+  import PhaseTag from './PhaseTag.vue'
+
   export default {
     name: 'phase-banner',
     props: {
-      tag: String,
+      phase: String,
     },
+    components: {
+      PhaseTag,
+    }
   }
 </script>
 
@@ -31,17 +36,6 @@
     @include media('>tablet') {
       font-size: 1rem;
     }
-  }
-
-  .phase-banner__tag {
-    background-color: #005ea5;
-    color: #fff;
-    font-weight: 600;
-    padding: .1em .35em 0;
-    text-transform: uppercase;
-    margin-right: .5em;
-    display: inline-block;
-    cursor: default;
   }
 
   .phase-banner__message {
