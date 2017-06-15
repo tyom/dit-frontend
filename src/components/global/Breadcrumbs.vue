@@ -2,7 +2,7 @@
   <div class="breadcrumbs">
     <ol class="breadcrumbs__list">
       <li class="breadcrumbs__item" v-for="item in items" v-if="item.title">
-        <a :href="item.url" v-if="item.url">{{item.title}}</a>
+        <router-link :to="item.url" v-if="item.url">{{item.title}}</router-link>
         <template v-else>{{item.title}}</template>
       </li>
     </ol>
