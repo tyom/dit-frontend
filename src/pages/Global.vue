@@ -34,8 +34,8 @@
       return {
         breadcrumbs: [
           {url: '/', title: 'Home'},
-          {url: '/companies/', title: 'Companies'},
-          {title: 'Hilton UK Ltd'},
+          {url: '/global', title: 'Global Components'},
+          {title: 'Breadcrumbs'},
         ]
       }
     },
