@@ -115,7 +115,7 @@
       }
 
       a.is-selected,
-      a.router-link-active {
+      a.router-link-exact-active {
         color: #1d8feb;
       }
     }
