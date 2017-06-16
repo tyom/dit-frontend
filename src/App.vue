@@ -21,6 +21,7 @@
         globalNavItems: [
           { url: '/layout', label: 'Layout' },
           { url: '/global', label: 'Global components' },
+          { url: '/nav', label: 'Navigation' },
           { url: '/form-elements', label: 'Form elements' },
         ]
       }

@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 
 import IndexPage from './pages/Index.vue'
 import GlobalPage from './pages/Global.vue'
+import NavPage from './pages/Nav.vue'
 import FormElementsPage from './pages/FormElements.vue'
 import LayoutPage from './pages/Layout.vue'
 
@@ -21,6 +22,7 @@ const router = new VueRouter({
     { path: '/', component: IndexPage },
     { path: '/form-elements', component: FormElementsPage },
     { path: '/global', component: GlobalPage },
+    { path: '/nav', component: NavPage },
     { path: '/layout', component: LayoutPage },
     { path: '*', redirect: '/' }
   ]
