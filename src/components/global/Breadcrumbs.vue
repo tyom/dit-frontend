@@ -1,5 +1,5 @@
 <template>
-  <div class="breadcrumbs">
+  <div class="breadcrumbs" v-if="items.length">
     <ol class="breadcrumbs__list">
       <li class="breadcrumbs__item" v-for="item in items" v-if="item.title">
         <router-link :to="item.url" v-if="item.url">{{item.title}}</router-link>
