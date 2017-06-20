@@ -84,6 +84,7 @@
     border-top: 1px solid rgba(#fff, .3);
     padding-top: 5px;
     margin: 5px -20px 0;
+    white-space: nowrap;
 
     a:link {
       display: block;
