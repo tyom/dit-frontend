@@ -59,7 +59,7 @@
       <h2 slot="title">
         <code>radio-group</code> with <code>radio-button</code>
       </h2>
-      <fieldset-group legend="Are you sure?" hint="Think carefully.">
+      <fieldset-group variant="plain" legend="Are you sure?" hint="Think carefully.">
         <radio-button value="y" label="Yes" name="test" inline/>
         <radio-button value="n" label="No" name="test" inline/>
       </fieldset-group>

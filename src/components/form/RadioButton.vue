@@ -45,8 +45,8 @@
 
   .dit-radio {
     border: 2px solid;
-    width: 2.4em;
-    height: 2.4em;
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
     position: absolute;
     opacity: 0;
@@ -59,6 +59,7 @@
       vertical-align: middle;
       position: relative;
       user-select: none;
+      line-height: 30px;
       padding-left: 2em;
       margin-right: 1.2em;
 

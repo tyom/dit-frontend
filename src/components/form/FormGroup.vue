@@ -57,6 +57,7 @@
 
   .form-group {
     margin: 30px 0;
+    max-width: 50em;
   }
 
   .form-group--inline {
