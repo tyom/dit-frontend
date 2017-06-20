@@ -45,6 +45,10 @@
     &[type="number"],
     &[type="password"] {
       width: 100%;
+
+      &::placeholder {
+        color: #999;
+      }
     }
   }
 </style>
