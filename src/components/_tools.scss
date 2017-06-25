@@ -1,7 +1,7 @@
 @import "./settings";
 @import "~include-media/dist/_include-media.scss";
 
-@mixin hide-text($width, $height) {
+@mixin hide-text($width, $height: null) {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
