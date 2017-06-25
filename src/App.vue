@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <global-header>
+    <global-header :crest="false">
       <logo></logo>
     </global-header>
     <global-nav :items="globalNavItems"></global-nav>

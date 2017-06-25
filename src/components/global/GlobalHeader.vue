@@ -1,11 +1,14 @@
 <template>
   <div class="global-header">
     <container>
-      <div class="global-header__site-title">
+      <div class="global-header__site-logo">
         <slot>
-          <h1>
-            TRADE.GOV.UK
-            <phase-tag phase="alpha"></phase-tag>
+          <h1 class="global-header__site-title">
+            <router-link :to="titleLink">
+              <crest class="global-header__crest" v-if="crest"></crest>
+              <span>{{title}}</span>
+            </router-link>
+            <phase-tag :phase="phase" v-if="phase"></phase-tag>
           </h1>
         </slot>
       </div>
@@ -19,12 +22,32 @@
 <script>
   import Container from '../layout/Container.vue'
   import PhaseTag from './PhaseTag.vue'
+  import Crest from '../../assets/crest.svg'
 
   export default {
     name: 'global-header',
+    props: {
+      crest: {
+        type: Boolean,
+        default: true,
+      },
+      phase: {
+        type: [String, Boolean],
+        default: 'alpha',
+      },
+      title: {
+        type: String,
+        default: 'TRADE.GOV.UK',
+      },
+      titleLink: {
+        type: String,
+        default: '/',
+      }
+    },
     components: {
       Container,
       PhaseTag,
+      Crest,
     }
   }
 </script>
@@ -54,28 +77,45 @@
     }
   }
 
-  .global-header__site-title {
+  .global-header__crest {
+    margin-right: 8px;
+    width: 36px;
+    vertical-align: top;
+  }
+
+  .global-header__site-logo {
     margin: 0;
     font-size: 1.8rem;
+    display: flex;
+  }
 
-    h1 {
-      margin: 0;
-      font-size: inherit;
+  .global-header__site-title {
+    margin: 0;
+    font-size: inherit;
 
-      a {
-        display: inline-block;
-        line-height: 1;
-      }
+    a {
+      display: flex;
+      align-items: center;
+      float: left;
+      margin-left: -8px;
+      line-height: 1;
+      padding: 0 8px;
 
       span {
-        font-weight: 400;
+        border-bottom: 1px solid transparent;
+        margin-bottom: -1px;
+        transition: 100ms;
       }
 
-      .phase-tag {
-        top: -3px;
-        font-weight: 600;
-        margin-left: 5px;
+      &:hover span {
+        border-color: #fff;
       }
+    }
+
+    .phase-tag {
+      float: left;
+      margin-top: 5px;
+      margin-left: 8px;
     }
   }
 
