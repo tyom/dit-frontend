@@ -21,7 +21,7 @@ a {
   &:link {
     text-decoration-skip: ink;
     transition: 100ms box-shadow;
-    color: #005ea5;
+    color: $govuk-blue;
   }
 
   &:visited {

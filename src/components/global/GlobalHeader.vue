@@ -117,7 +117,7 @@
 
       a.is-selected,
       a.router-link-exact-active {
-        color: #1d8feb;
+        color: lighten($govuk-blue, 20);
       }
     }
 
