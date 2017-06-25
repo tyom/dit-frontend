@@ -14,7 +14,8 @@
     "examples:run:simple": "cp -rf dist examples/simple && cd examples/simple && python -m SimpleHTTPServer",
     "examples:run:webpack": "cd examples/webpack && webpack-dev-server --open",
     "examples:run:components": "cd examples/components && webpack-dev-server --open",
-    "deploy": "npm run build && surge --project ./dist --domain envious-rat.surge.sh",
+    "deploy-to-surge": "surge --project ./dist --domain envious-rat.surge.sh",
+    "deploy": "npm run build && deploy-to-surge",
     "postinstall": "cross-env NODE_ENV=development webpack --progress --hide-modules"
   },
   "dependencies": {
